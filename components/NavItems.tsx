@@ -3,7 +3,7 @@ import {sidebarItems} from "~/constants";
 import {cn} from "~/lib/utils";
 
 
-const NavItems = () => {
+const NavItems = ({handleClick}:{handleClick?:()=>void }) => {
     //hardcoding user because lack of authentication setup
     const user={
         name:'Shashank',
@@ -14,7 +14,7 @@ const NavItems = () => {
         <section className="nav-items">
             <Link to='/' className="link-logo">
             <img src="/assets/icons/logo.svg" alt="logo" className="size-[30px]"/>
-            <h1>Tourvista</h1>
+            <h1>Tourvisto</h1>
             </Link>
             <div className="container">
                 <nav>
@@ -23,7 +23,7 @@ const NavItems = () => {
                             {({isActive}:{isActive:boolean})=>(
                                 <div className={cn('group nav-item',{
                                     'bg-primary-100 !text-white':isActive
-                                })}>
+                                })} onClick={handleClick}>
                                     <img
                                     src={icon}
                                     alt={label}
