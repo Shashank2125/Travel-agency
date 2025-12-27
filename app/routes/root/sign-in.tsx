@@ -8,6 +8,7 @@ import {account} from "~/appwrite/client";
 
 export async function clientLoader(){
     try {
+
         const user=await account.get();
         //if no user redirect to home page
         if(!user.$id) return redirect('/');
@@ -17,6 +18,7 @@ export async function clientLoader(){
     }
 }
 const SignIn = () => {
+    console.log("Appwrite endpoint:", import.meta.env.VITE_APPWRITE_API_ENDPOINT);
 
 
     return (
