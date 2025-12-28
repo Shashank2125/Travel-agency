@@ -11,7 +11,7 @@ export async function clientLoader(){
 
         const user=await account.get();
         //if no user redirect to home page
-        if(!user.$id) return redirect('/');
+        if(user.$id) return redirect('/');
         
     } catch (e) {
         console.log('Error fetching user',e)
